@@ -18,7 +18,7 @@ Usually admins have to run 1000s of commands to check linux servers, this create
 
 ## Requirements
 
-- Linux (tested on Ubuntu)
+- Linux (tested on Parrot and Pop-os)
 - Python 3.10+ (`verify_stdlib.py` relies on `sys.stdlib_module_names`, added in Python 3.10)
 - Root privileges — the script refuses to run without them
 - Not compatible with Windows or macOS. Windows users can run it under WSL2, since that's a real Linux kernel.
@@ -48,41 +48,13 @@ These were a few examples. There are more options in the Makefile, you can run t
 
 **Note - The Makefile commands are intentionally written with sudo preceding them to ensure root security.**
 
+# Flowchart 
+
 ## Flowchart
 
-The flowchart of the script is as follows:
-
-```mermaid
-flowchart TD
-nA["User runs<br/>$sudo python3 Linux_sys_admin.py {--options}"]
-nB["Check operating system<br/>(platform.system())"]
-nC["Linux"]
-nD["Not Linux"]
-nE["Print 'Unsupported OS'<br/>return error (exit code 2)"]
-nF["Check effective UID<br/>(os.geteuid())"]
-nG["UID == 0 (root)"]
-nH["UID != 0"]
-nI["Print 'Please run as root'<br/>exit 2"]
-nJ["run_linux():<br/>argparse parses flags"]
-nK["Dispatch to matching function:<br/>--check / --list / --remove<br/>--users / --permissions / --suid<br/>--processes / --network / --services<br/>--logs / --system / --audit / -f"]
-nL["Selected option's function executes<br/>and returns exit codes"]
-nM["Return exit code<br/>(0 = success, 1 = failure, 2 = error)"]
-n_END["END: script exits immediately<br/>(exit code 2 — OS check or root check failed)"]
-nA --> nB
-nB -->|"Linux"| nC
-nB -->|"Not Linux"| nD
-nD --> nE
-nC --> nF
-nF -->|"root"| nG
-nF -->|"not root"| nH
-nH --> nI
-nG --> nJ
-nJ --> nK
-nK --> nL
-nL --> nM
-nE --> n_END
-nI --> n_END
-```
+<p align="center">
+  <img src="docs/flowchart.svg" alt="Linux SysAdmin Tool Flowchart" width="700">
+</p>
 
 ## Options
 
