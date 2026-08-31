@@ -30,7 +30,7 @@ Clone this repo:
 git clone https://github.com/Bhavishyaa12/Linux_sys_admin_tool.git
 cd Linux_sys_admin_tool
 ```
-If you want to check the all of the imports of the main script.py then you can run 
+If you want to check all of the imports of the main script.py then you can run 
 ```bash
 make test
 ```
@@ -49,8 +49,6 @@ These were a few examples. There are more options in the Makefile, you can run t
 **Note - The Makefile commands are intentionally written with sudo preceding them to ensure root security.**
 
 # Flowchart 
-
-## Flowchart
 
 <p align="center">
   <img src="docs/flowchart.svg" alt="Linux SysAdmin Tool Flowchart" width="700">
