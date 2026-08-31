@@ -1,0 +1,22 @@
+demo_video_script.txt
+# Python bytecode and cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Runtime audit database and temp swap files
+hashes.json
+*.tmp
+
+# Environment & editor configurations
+.env
+.venv/
+env/
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS metadata
+.DS_Store
+Thumbs.db

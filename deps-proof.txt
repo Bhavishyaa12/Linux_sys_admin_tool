@@ -1,0 +1,14 @@
+# This file was generated on Sunday 30 August 2026 05:42:21 PM IST
+
+Command run -
+
+$./verify_stdlib.py Linux_sys_admin.py
+
+Output:
+
+Target file:        Linux_sys_admin.py
+Python version:     3.13.5
+Imports found:      ['argparse', 'datetime', 'grp', 'hashlib', 'json', 'os', 'platform', 'pwd', 'stat', 'subprocess', 'sys', 'time']
+Third-party (non-stdlib) imports: NONE
+
+Pass: every import resolves to the Python standard library.

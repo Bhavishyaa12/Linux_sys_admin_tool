@@ -1,0 +1,96 @@
+<mxfile host="Electron" agent="5.0">
+  <diagram name="linux_audit.py flow" id="linux-audit-flow">
+    <mxGraphModel dx="1571" dy="938" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="1400" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="nA" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;labelBackgroundColor=none;" value="User runs&lt;br&gt;$sudo python3 linux_sys_admin.py {options}" vertex="1">
+          <mxGeometry height="60" width="220" x="50" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="nB" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=15;labelBackgroundColor=none;" value="Check operating system&#xa;(platform.system())" vertex="1">
+          <mxGeometry height="60" width="220" x="460" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="nC" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;labelBackgroundColor=none;" value="Linux" vertex="1">
+          <mxGeometry height="60" width="160" x="280" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="nD" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;labelBackgroundColor=none;" value="Not Linux" vertex="1">
+          <mxGeometry height="60" width="160" x="740" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="44M5AWWy1qYXZMkdTPyM-3" edge="1" parent="1" source="nE" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;fontColor=default;" target="44M5AWWy1qYXZMkdTPyM-2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nE" parent="1" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;" value="Print &quot;Unsupported OS&quot;&lt;br&gt;return error (exit code 2)" vertex="1">
+          <mxGeometry height="70" width="220" x="710" y="285" as="geometry" />
+        </mxCell>
+        <mxCell id="nF" parent="1" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;" value="Check effective UID&#xa;(os.geteuid())" vertex="1">
+          <mxGeometry height="60" width="220" x="250" y="285" as="geometry" />
+        </mxCell>
+        <mxCell id="nG" parent="1" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;" value="UID == 0 (root)" vertex="1">
+          <mxGeometry height="60" width="180" x="80" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="nH" parent="1" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;" value="UID != 0" vertex="1">
+          <mxGeometry height="60" width="180" x="420" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="nI" parent="1" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;" value="Print &quot;Please run as root&quot;&lt;br&gt;exit 2" vertex="1">
+          <mxGeometry height="70" width="220" x="400" y="515" as="geometry" />
+        </mxCell>
+        <mxCell id="nJ" parent="1" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;" value="run_linux():&#xa;argparse parses flags" vertex="1">
+          <mxGeometry height="70" width="220" x="60" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="nK" parent="1" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;" value="Options provide with an optional bash tab completion script&lt;br&gt;--check / --list / --remove&lt;br&gt;--users / --permissions / --suid&lt;br&gt;--processes / --network / --services&lt;br&gt;--logs / --system / --audit / -f" vertex="1">
+          <mxGeometry height="120" width="280" x="210" y="638" as="geometry" />
+        </mxCell>
+        <mxCell id="nL" parent="1" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;" value="Selected options&#39;s function executes&lt;br&gt;and return exit codes" vertex="1">
+          <mxGeometry height="60" width="220" x="240" y="799" as="geometry" />
+        </mxCell>
+        <mxCell id="nM" parent="1" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;" value="Return exit code&#xa;(0 = success, 1 = failure, 2 = error)" vertex="1">
+          <mxGeometry height="60" width="240" x="230" y="900" as="geometry" />
+        </mxCell>
+        <mxCell id="eAB" edge="1" parent="1" source="nA" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=none;fontColor=default;" target="nB">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eBC" edge="1" parent="1" source="nB" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=none;fontColor=default;" target="nC" value="Linux">
+          <mxGeometry relative="1" x="0.1115" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eBD" edge="1" parent="1" source="nB" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=none;fontColor=default;" target="nD" value="Not Linux">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eDE" edge="1" parent="1" source="nD" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=none;fontColor=default;" target="nE">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eCF" edge="1" parent="1" source="nC" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=none;fontColor=default;" target="nF">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eFG" edge="1" parent="1" source="nF" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=none;fontColor=default;" target="nG" value="root">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eFH" edge="1" parent="1" source="nF" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=none;fontColor=default;" target="nH" value="not root">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eHI" edge="1" parent="1" source="nH" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=none;fontColor=default;" target="nI">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eGJ" edge="1" parent="1" source="nG" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=none;fontColor=default;" target="nJ">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eJK" edge="1" parent="1" source="nJ" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=none;fontColor=default;" target="nK">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eKL" edge="1" parent="1" source="nK" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=none;fontColor=default;" target="nL">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eLM" edge="1" parent="1" source="nL" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;labelBackgroundColor=none;fontColor=default;" target="nM">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="44M5AWWy1qYXZMkdTPyM-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=13;labelBackgroundColor=none;" value="END: script exits immediately&lt;br&gt;(exit code 2 — OS check or root check failed)" vertex="1">
+          <mxGeometry height="60" width="220" x="710" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="eIEND" edge="1" parent="1" source="nI" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;fontColor=default;" target="44M5AWWy1qYXZMkdTPyM-2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
