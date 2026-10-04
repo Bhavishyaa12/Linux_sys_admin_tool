@@ -6,7 +6,7 @@ Linux system administration tool for geeks who are into linux and want top notch
 
 ### I have also made a video in which I am using the script in an isolated python environment which is clean. That is the second proof.
 
-## You can see the write-up of this repo here-https://zero-dependency-hackathon-write-up.github.io/
+### You can see the write-up of this repo here-https://zero-dependency-hackathon-write-up.github.io/
 
 Nowadays we have seen many attacks on linux servers. LPE (Linux privilege escalation) has now become a common friend of ours. After AI, attacks and threats to linux servers are rising. To tackle this we have our great heroes, system administrators, which protect our servers and systems.
 
